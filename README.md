@@ -61,6 +61,20 @@ Behaviour covered: hash routing with guards, draft saved in `localStorage` and r
 
 No native `<select>` or `<input type="date">`: listbox **select** (typeahead), **date-range picker** (one shared popover, blocked nights, minimum stays, nightly prices, bottom sheet on phones), **steppers** with shared caps, **dialogs** with focus traps, **toasts**. Values live in hidden inputs and dispatch `change`.
 
+## Mobile
+
+`css/mobile.css` (loaded last) holds the phone layer: 44px tap targets, 16px inputs (no iOS focus-zoom), safe-area insets (`viewport-fit=cover`), `dvh` units, the numbered phone menu, the swipe strip for suites, the accordion footer and the date-sheet grab handle. `js/mobile.js` adds keyboard-aware chrome (fixed bars hide while typing) and Enter-key labels. The gallery lightbox is **PhotoSwipe 5** (pinch-zoom, swipe, drag-to-close) with the built-in lightbox as fallback if the CDN script fails.
+
+**Mobile check** (dev-only, never deployed): `tools/` holds a Playwright harness that drives your installed Chrome with phone/tablet emulation.
+
+```powershell
+cd tools; npm install
+npm run mobile:quick     # 7 key pages x 3 phones, ~5 min
+npm run mobile           # every page x 5 devices, ~40 min
+```
+
+It checks horizontal overflow, tap targets (<24px is a hard fail, <44px a warning), input font size, axe (WCAG 2.2 AA), console/HTTP errors and layout shift, and writes `tools/mobile-check/out/report.md` plus a screenshot contact sheet (`index.html`). Lighthouse is a devDependency too: serve with `npx http-server . -p 8081 --gzip` and run `node node_modules/lighthouse/cli/index.js http://localhost:8081/index.html`. Emulation is not real Safari, so do a quick check on a physical phone after deploys.
+
 ## Images (Codex CLI)
 
 ```powershell
