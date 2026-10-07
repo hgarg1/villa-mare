@@ -223,3 +223,32 @@ a, button, summary, label, input, select, textarea, [role="button"], [role="tab"
   .suite-strip .suite-card { flex: 0 0 min(80%, 20rem); scroll-snap-align: start; }
   .suite-strip .suite-card p { -webkit-line-clamp: 3; }
 }
+
+/* ---- PhotoSwipe lightbox theming ---- */
+.pswp { --pswp-bg: #0b1d24; --pswp-icon-color: #f7f2ea; --pswp-icon-color-secondary: #0b1d24; --pswp-root-z-index: 400; font-family: var(--sans); }
+.pswp__counter { font-size: .78rem; letter-spacing: .12em; }
+.pswp__caption {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 10; padding: 2.4rem 1rem calc(.9rem + var(--sab)); text-align: center; pointer-events: none;
+  color: var(--ivory); font-size: .85rem; letter-spacing: .04em; background: linear-gradient(to top, rgba(0, 0, 0, .55), transparent);
+}
+.pswp__button { width: var(--tap); height: var(--tap); }
+
+/* ---- date sheet: grab handle (phones only) ---- */
+.dp__grab { display: none; }
+@media (max-width: 640px) {
+  .dp { overscroll-behavior: contain; padding-top: .4rem; }
+  .dp__grab { display: grid; place-items: center; height: 1.6rem; margin-bottom: .2rem; touch-action: none; cursor: grab; }
+  .dp__grab i { width: 2.6rem; height: .28rem; border-radius: 99px; background: rgba(29, 42, 46, .22); }
+  .dp__head { touch-action: none; }
+}
+
+/* ---- keyboard up: fixed bars step aside; checkout actions stack comfortably ---- */
+@media (max-width: 1023px) { body.has-kb .bookbar, body.has-kb .summary { display: none !important; } }
+@media (max-width: 560px) {
+  .step-actions { display: flex; gap: .7rem; }
+  .step-actions .btn { flex: 1; justify-content: center; }
+  .step-actions .btn--solid { flex: 2; }
+}
+
+/* checkout renders its steps from JS: reserve the height so the footer never jumps into view (CLS) */
+body.checkout-page main { min-height: 100svh; }

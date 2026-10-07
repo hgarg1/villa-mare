@@ -294,6 +294,7 @@
     dp.setAttribute("role", "dialog");
     dp.setAttribute("aria-label", "Choose your dates");
     dp.innerHTML = `
+      <div class="dp__grab" aria-hidden="true"><i></i></div>
       <div class="dp__head">
         <button type="button" class="dp__nav" data-nav="-1" aria-label="Previous month"><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M8 2 4 6l4 4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
         <p class="dp__hint" aria-live="polite"></p>
@@ -368,6 +369,32 @@
       cur.render();
       cur.focusDay();
     });
+
+    /* phone sheet: drag the handle or the header down to dismiss (follows the finger; flick or 30% travel closes) */
+    let drag = null;
+    const inDragZone = (e) => sheet() && (e.target.closest(".dp__grab") || (e.target.closest(".dp__head") && !e.target.closest("button")));
+    dp.addEventListener("pointerdown", (e) => {
+      if (!inDragZone(e)) return;
+      drag = { id: e.pointerId, y0: e.clientY, t0: performance.now(), dy: 0 };
+      dp.setPointerCapture(e.pointerId);
+      dp.style.transition = "none";
+    });
+    dp.addEventListener("pointermove", (e) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      drag.dy = Math.max(0, e.clientY - drag.y0);
+      dp.style.transform = `translateY(${drag.dy}px)`;
+    });
+    const endDrag = (e) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      const { dy, t0 } = drag;
+      drag = null;
+      const velocity = dy / Math.max(1, performance.now() - t0); // px per ms
+      dp.style.transition = "";
+      dp.style.transform = "";
+      if (cur && (dy > dp.offsetHeight * 0.3 || velocity > 0.6)) cur.close();
+    };
+    dp.addEventListener("pointerup", endDrag);
+    dp.addEventListener("pointercancel", endDrag);
 
     document.addEventListener("pointerdown", (e) => {
       if (!isOpen() || !cur) return;

@@ -24,6 +24,8 @@
   const { gsap, ScrollTrigger } = window;
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true }); // URL-bar show/hide must not re-measure every trigger
+  // phones: reveals and the intro play ~30% faster. Long, slow choreography reads as lag under a thumb.
+  if (matchMedia("(max-width: 700px), (pointer: coarse)").matches) gsap.globalTimeline.timeScale(1.3);
 
   /* ---------- Smooth scroll ---------- */
   if (window.Lenis) {
@@ -67,9 +69,11 @@
   /* ---------- Intro (curtain lift + hero) ---------- */
   const intro = gsap.timeline({ defaults: { ease: "power4.out" } });
   if (curtain) {
+    // phones: the wordmark is already on screen (static curtain), so lift straight away; content must not wait on a long intro
+    const quick = matchMedia("(max-width: 700px), (pointer: coarse)").matches;
+    if (!quick) intro.from(curtain.firstElementChild, { y: 20, opacity: 0, duration: 0.7 });
     intro
-      .from(curtain.firstElementChild, { y: 20, opacity: 0, duration: 0.7 })
-      .to(curtain, { yPercent: -100, duration: 1, ease: "power4.inOut", delay: 0.15 })
+      .to(curtain, { yPercent: -100, duration: quick ? 0.8 : 1, ease: "power4.inOut", delay: quick ? 0.1 : 0.15 })
       .set(curtain, { display: "none" });
   }
   const heroSplit = document.querySelector(".hero [data-split]");

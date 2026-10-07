@@ -1,4 +1,5 @@
-/* Gallery: category filter + keyboard-accessible lightbox. */
+/* Gallery: category filter + lightbox. PhotoSwipe 5 (pinch-zoom, swipe, drag-down-to-close) when its script loaded;
+   otherwise the built-in keyboard-accessible lightbox below. */
 (() => {
   const figures = [...document.querySelectorAll(".masonry figure")];
   const buttons = [...document.querySelectorAll(".filters button")];
@@ -40,7 +41,29 @@
     img.alt = src.alt;
     cap.textContent = `${idx + 1} / ${list.length} — ${src.alt}`;
   };
+  /* ---- PhotoSwipe path ---- */
+  const PS = window.PhotoSwipe && window.PhotoSwipeLightbox ? new window.PhotoSwipeLightbox({
+    pswpModule: window.PhotoSwipe, bgOpacity: 1, wheelToZoom: true, closeOnVerticalDrag: true, showHideAnimationType: "fade", paddingFix: true, imageClickAction: "zoom-or-close",
+  }) : null;
+  if (PS) {
+    PS.on("uiRegister", () => {
+      PS.pswp.ui.registerElement({
+        name: "caption", order: 9, isButton: false, appendTo: "root", html: "",
+        onInit: (el, pswp) => { el.className = "pswp__caption"; pswp.on("change", () => { el.textContent = pswp.currSlide.data.alt || ""; }); },
+      });
+    });
+    PS.on("beforeOpen", () => window.__lenis?.stop());
+    PS.on("destroy", () => window.__lenis?.start());
+    PS.init();
+  }
+  const slideData = (list) => list.map((f) => {
+    const im = f.querySelector("img");
+    const w = im.naturalWidth || 3, h = im.naturalHeight || 2; // aspect from the thumbnail; the full file is 1536px wide
+    return { src: im.src, msrc: im.currentSrc || im.src, width: 1536, height: Math.round(1536 * h / w), alt: im.alt, element: im };
+  });
+
   const open = (fig) => {
+    if (PS) { const list = visible(); PS.loadAndOpen(list.indexOf(fig), slideData(list)); return; }
     opener = fig;
     show(visible().indexOf(fig));
     box.classList.add("is-open");
