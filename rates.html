@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+  <meta name="theme-color" content="#f7f2ea" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <title>Rates &amp; Availability — Villa Maré</title>
   <meta name="description" content="Seasonal rates, a live availability calendar and an instant price estimate for Villa Maré." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -10,11 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
 </head>
 <body>
   <main id="main">
     <section class="hero page-hero" data-section="Top">
-      <div class="hero__media"><img src="assets/img/rates-hero.jpg" alt="Turquoise lagoon seen from above" fetchpriority="high" /></div>
+      <div class="hero__media"><img src="assets/img/rates-hero.jpg" srcset="assets/img/rates-hero-800.jpg 800w, assets/img/rates-hero.jpg 1536w" sizes="100vw" alt="Turquoise lagoon seen from above" fetchpriority="high" /></div>
       <div class="hero__content wrap">
         <span class="eyebrow">Rates &amp; availability</span>
         <h1 data-split>One villa, four seasons</h1>

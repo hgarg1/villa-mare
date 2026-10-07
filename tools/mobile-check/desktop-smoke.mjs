@@ -1,0 +1,13 @@
+import { chromium } from "playwright";
+const b = await chromium.launch({ channel: "chrome", headless: true });
+const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
+const errs = []; p.on("console", (m) => m.type() === "error" && errs.push(m.text())); p.on("pageerror", (e) => errs.push(String(e)));
+await p.goto("http://localhost:8080/tests.html"); await p.waitForTimeout(2500);
+console.log("tests title:", await p.title());
+await p.goto("http://localhost:8080/index.html"); await p.waitForTimeout(3000);
+console.log("header state top:", await p.evaluate(() => document.querySelector("#site-header").dataset.state));
+await p.evaluate(() => window.__lenis ? window.__lenis.scrollTo(1200, { immediate: true }) : scrollTo(0, 1200)); await p.waitForTimeout(1800);
+console.log("header state scrolled:", await p.evaluate(() => document.querySelector("#site-header").dataset.state));
+await p.screenshot({ path: "mobile-check/out/desktop-scrolled.png" });
+console.log("errors:", errs);
+await b.close();

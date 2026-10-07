@@ -1,0 +1,5 @@
+node_modules/
+mobile-check/out/
+mobile-check/review/
+mobile-check-*-out/
+*.log

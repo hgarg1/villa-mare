@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+  <meta name="theme-color" content="#f7f2ea" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <title>The Villa — Villa Maré</title>
   <meta name="description" content="Four ocean-facing suites, a chef's kitchen, an infinity pool and a private beach." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -10,11 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
 </head>
 <body>
   <main id="main">
     <section class="hero page-hero">
-      <div class="hero__media"><img src="assets/img/terrace-pool.jpg" alt="Terrace and pool meeting the beach" fetchpriority="high" /></div>
+      <div class="hero__media"><img src="assets/img/terrace-pool.jpg" srcset="assets/img/terrace-pool-800.jpg 800w, assets/img/terrace-pool.jpg 1536w" sizes="100vw" alt="Terrace and pool meeting the beach" fetchpriority="high" /></div>
       <div class="hero__content wrap">
         <span class="eyebrow">The villa</span>
         <h1 data-split>Four suites, one horizon</h1>
@@ -40,7 +43,7 @@
         <span class="eyebrow">The spaces</span>
         <h2 data-split style="margin-top:1.2rem">Move through the house</h2>
       </div>
-      <div class="hscroll__track">
+      <div class="hscroll__track" tabindex="0" role="region" aria-label="Spaces of the villa, scroll sideways">
         <article class="space"><div class="img-mask"><img src="assets/img/living-room.jpg" alt="Open-plan living room" loading="lazy" /></div><small>01</small><h3>Living room</h3><p>Floor-to-ceiling doors that disappear into the walls.</p></article>
         <article class="space"><div class="img-mask"><img src="assets/img/master-bedroom.jpg" alt="Master bedroom with ocean view" loading="lazy" /></div><small>02</small><h3>Master suite</h3><p>A low canopy bed facing the water, with a stone bath behind.</p></article>
         <article class="space"><div class="img-mask"><img src="assets/img/second-bedroom.jpg" alt="Guest suite" loading="lazy" /></div><small>03</small><h3>Garden suites</h3><p>Three further suites, each with its own terrace and outdoor shower.</p></article>

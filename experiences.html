@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+  <meta name="theme-color" content="#f7f2ea" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <title>Experiences — Villa Maré</title>
   <meta name="description" content="Sunrise yoga, dinner on the sand, a day under sail and a private spa ritual." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -10,11 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
 </head>
 <body>
   <main id="main">
     <section class="hero page-hero">
-      <div class="hero__media"><img src="assets/img/sunset-dinner.jpg" alt="Candlelit dinner on the sand at sunset" fetchpriority="high" /></div>
+      <div class="hero__media"><img src="assets/img/sunset-dinner.jpg" srcset="assets/img/sunset-dinner-800.jpg 800w, assets/img/sunset-dinner.jpg 1536w" sizes="100vw" alt="Candlelit dinner on the sand at sunset" fetchpriority="high" /></div>
       <div class="hero__content wrap">
         <span class="eyebrow">Experiences</span>
         <h1 data-split>Days shaped by the tide</h1>

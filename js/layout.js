@@ -35,7 +35,7 @@
 
   const navHTML = NAV.map((n, i) =>
     n.items
-      ? `<div class="nav__group">
+      ? `<div class="nav__group" data-label="${n.label}">
            <button type="button" class="nav__trigger${n.items.some((x) => isCurrent(x.href)) ? " is-current" : ""}" aria-expanded="false" aria-controls="mega-${i}">${n.label}<svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><path d="m2 4 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button>
            <div class="mega" id="mega-${i}">${n.items.map((x) => `<a href="${x.href}"${isCurrent(x.href) ? ' aria-current="page"' : ""}><b>${x.label}</b><span>${x.sub}</span></a>`).join("")}</div>
          </div>`
@@ -46,6 +46,9 @@
     try { return VM.money.fmt(Math.min(...VM.data.seasons.map((s) => s.nightly))); } catch (e) { return "$1,800"; }
   })();
 
+  const contactEmail = VM.data ? VM.esc(VM.data.villa.email) : "stay@villamare.example";
+  const contactPhone = VM.data ? VM.esc(VM.data.villa.phone) : "+00 000 000 000";
+
   /* ---------------- markup ---------------- */
   const header = `
     <a class="skip-link" href="#main">Skip to content</a>
@@ -54,9 +57,12 @@
         <span class="logo__full">Villa Maré<small>Private Beachfront</small></span>
         <span class="logo__mark" aria-hidden="true">M</span>
       </a>
-      <nav class="nav" id="site-nav" aria-label="Main">
+      <nav class="nav" id="site-nav" aria-label="Main" data-lenis-prevent>
         ${navHTML}
-        <a class="btn btn--light nav__cta-mobile" href="checkout.html">Book now</a>
+        <div class="nav__foot">
+          <a class="btn btn--light nav__cta-mobile" href="checkout.html">Book your stay</a>
+          <div class="nav__contact"><a href="mailto:${contactEmail}" aria-label="Email ${contactEmail}">Email us</a><a href="tel:${contactPhone.replace(/[^+\d]/g, '')}" aria-label="Call ${contactPhone}">Call us</a></div>
+        </div>
       </nav>
       <a class="btn btn--light header__cta" href="checkout.html"><span>Book now</span></a>
       <div class="rail__dots" role="list" aria-label="Sections on this page"></div>
@@ -80,36 +86,45 @@
   const footer = `
     <footer class="site-footer">
       <div class="wrap">
+        <div class="footer__hero" data-reveal>
+          <span class="eyebrow">Maré Bay</span>
+          <h2>Come for a week.<br /><em>Stay for the light.</em></h2>
+          <a class="btn btn--solid footer__cta" href="checkout.html">Reserve your dates</a>
+          <p class="footer__hint">From ${fromPrice} a night · 30% deposit · free cancellation 60 days out</p>
+        </div>
         <div class="footer__top">
-          <div class="stack">
+          <div class="stack footer__intro">
             <a class="logo" href="index.html">Villa Maré</a>
             <p style="max-width:22rem;opacity:.75">A private beachfront villa for slow mornings, long dinners and nothing on the calendar.</p>
             <form class="newsletter" id="newsletter" novalidate>
               <label for="nl-email" class="sr-only">Email address</label>
-              <input id="nl-email" type="email" placeholder="Your email for the occasional letter" autocomplete="email" data-format="email" />
+              <input id="nl-email" type="email" placeholder="Your email for the occasional letter" autocomplete="email" inputmode="email" enterkeyhint="send" data-format="email" />
               <button type="submit" aria-label="Subscribe">→</button>
               <span class="err" role="alert"></span>
             </form>
           </div>
-          <div><h4>Explore</h4><ul>
+          <div class="footer__group"><h4>Explore</h4><div class="footer__panel"><ul>
             <li><a href="villa.html">The Villa</a></li>
             <li><a href="suites.html">Suites</a></li>
             <li><a href="experiences.html">Experiences</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="team.html">The team</a></li>
-            <li><a href="journal.html">Journal</a></li></ul></div>
-          <div><h4>Stay</h4><ul>
+            <li><a href="journal.html">Journal</a></li></ul></div></div>
+          <div class="footer__group"><h4>Stay</h4><div class="footer__panel"><ul>
             <li><a href="rates.html">Rates &amp; availability</a></li>
             <li><a href="checkout.html">Book now</a></li>
             <li><a href="booking.html">Manage booking</a></li>
             <li><a href="contact.html">Enquire</a></li>
-            <li><a href="policies.html">Policies</a></li></ul></div>
-          <div><h4>Contact</h4><ul>
-            <li><a href="mailto:stay@villamare.example">stay@villamare.example</a></li>
-            <li>+00 000 000 000</li>
-            <li>Maré Bay · 45 min from the airport</li></ul></div>
+            <li><a href="policies.html">Policies</a></li></ul></div></div>
+          <div class="footer__group footer__group--contact"><h4>Contact</h4><ul>
+            <li><a href="mailto:${contactEmail}">${contactEmail}</a></li>
+            <li>${contactPhone}</li>
+            <li>Maré Bay · 45 min from the airport</li></ul>
+            <div class="footer__pills"><a href="tel:${contactPhone.replace(/[^+\d]/g, "")}" aria-label="Call ${contactPhone}">Call us</a><a href="mailto:${contactEmail}" aria-label="Email ${contactEmail}">Email us</a></div>
+          </div>
         </div>
-        <div class="footer__bottom"><span>© <span id="yr"></span> Villa Maré. Placeholder brand &amp; copy · demo booking, no real payments.</span><span><a href="policies.html#terms">Terms</a> · <a href="policies.html#privacy">Privacy</a> · Imagery generated with AI.</span></div>
+        <div class="footer__mark" aria-hidden="true">Villa Maré</div>
+        <div class="footer__bottom"><span>© <span id="yr"></span> Villa Maré. Placeholder brand &amp; copy · demo booking, no real payments.</span><span><a href="policies.html#terms">Terms</a> · <a href="policies.html#privacy">Privacy</a> · Imagery generated with AI.</span><button type="button" class="footer__up" aria-label="Back to top"><svg viewBox="0 0 12 12" width="14" height="14" aria-hidden="true"><path d="m2 8 4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button></div>
       </div>
     </footer>`;
 
@@ -250,9 +265,12 @@
       if (!el.classList.contains("menu-open")) el.classList.toggle("is-hidden", y > lastY && y > 400);
     }
     bookbarEl?.classList.toggle("is-visible", !deskMq.matches && y > innerHeight * 0.55);
+    if (bookbarEl && window.__footerSeen !== undefined) bookbarEl.toggleAttribute("data-hide", window.__footerSeen);
     lastY = y;
   }
   addEventListener("scroll", onScroll, { passive: true });
+  // the footer carries its own Reserve CTA, so the sticky book bar steps aside while it is on screen
+  if ("IntersectionObserver" in window && bookbarEl) new IntersectionObserver(([e]) => { window.__footerSeen = e.isIntersecting; bookbarEl.toggleAttribute("data-hide", e.isIntersecting); }, { rootMargin: "0px 0px -25% 0px" }).observe($(".site-footer"));
   deskMq.addEventListener?.("change", () => {
     closePanel(false);
     applyState("bar");
@@ -342,15 +360,44 @@
   }
 
   /* ---------------- mobile menu (below 1024px) ---------------- */
+  const themeMeta = $('meta[name="theme-color"]');
+  const themeBase = themeMeta ? themeMeta.getAttribute("content") : "";
+  $$(".nav > a:not(.btn), .nav__group .mega a", el).forEach((a, i) => a.style.setProperty("--i", i)); // staggered entrance in the phone menu
   function setMobileMenu(open) {
     if (deskMq.matches) return;
     el.classList.toggle("menu-open", open);
     burger.setAttribute("aria-expanded", String(open));
     lenis(open ? "stop" : "start");
+    themeMeta?.setAttribute("content", open ? "#12303a" : themeBase);
     if (!window.__lenis) document.documentElement.style.overflow = open ? "hidden" : "";
   }
   burger.addEventListener("click", () => setMobileMenu(!el.classList.contains("menu-open")));
   $$(".nav a", el).forEach((a) => a.addEventListener("click", () => setMobileMenu(false)));
+
+  /* ---------------- footer: accordions on phones, back to top ---------------- */
+  const phoneMq = matchMedia("(max-width: 1023px)");
+  $$(".footer__group:not(.footer__group--contact)").forEach((g, i) => {
+    const h = $("h4", g), panelEl = $(".footer__panel", g), label = h.textContent;
+    panelEl.id = `footer-panel-${i}`;
+    const setup = () => {
+      g.classList.remove("is-open");
+      if (phoneMq.matches) h.innerHTML = `<button type="button" class="footer__toggle" aria-expanded="false" aria-controls="${panelEl.id}">${label}<i aria-hidden="true"></i></button>`;
+      else h.textContent = label; // desktop: plain headings, nothing to toggle
+    };
+    setup();
+    phoneMq.addEventListener?.("change", setup);
+    g.addEventListener("click", (e) => {
+      const t = e.target.closest(".footer__toggle");
+      if (!t) return;
+      const open = !g.classList.contains("is-open");
+      g.classList.toggle("is-open", open);
+      t.setAttribute("aria-expanded", String(open));
+    });
+  });
+  $(".footer__up")?.addEventListener("click", () => {
+    if (window.__lenis) window.__lenis.scrollTo(0, { duration: 1.4 });
+    else scrollTo({ top: 0, behavior: reduceMq.matches ? "auto" : "smooth" });
+  });
 
   VM.header = { get state() { return state; }, openPanel, closePanel, solidAlways };
 })();

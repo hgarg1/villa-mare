@@ -14,7 +14,7 @@
 
   --bg: var(--ivory);
   --fg: var(--ink);
-  --muted: #6b6558;
+  --muted: #5e584b; /* AA on ivory and on sand */
   --line: rgba(29, 42, 46, 0.14);
 
   --serif: "Cormorant Garamond", "Times New Roman", serif;

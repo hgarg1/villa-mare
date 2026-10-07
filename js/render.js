@@ -12,7 +12,8 @@
     mdLabel,
     seasonDates: (s) => s.ranges.map(([a, b]) => `${mdLabel(a)} – ${mdLabel(b)}`).join(" · "),
 
-    img: (name, alt = "", attrs = "") => `<img src="assets/img/${name}.jpg" alt="${esc(alt)}" ${attrs}>`,
+    /* above-the-fold images (fetchpriority=high) ship a srcset in the markup itself so phones never fetch the 1536w file first */
+    img: (name, alt = "", attrs = "") => `<img src="assets/img/${name}.jpg"${/fetchpriority="high"/.test(attrs) ? ` srcset="assets/img/${name}-800.jpg 800w, assets/img/${name}.jpg 1536w" sizes="100vw"` : ""} alt="${esc(alt)}" ${attrs}>`,
 
     /** price breakdown <dl> for a pricing.quote() result */
     breakdown(q) {

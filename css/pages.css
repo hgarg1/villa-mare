@@ -74,6 +74,7 @@
 .timeline__seg:nth-child(3) { border-color: #b8604f; }
 .timeline__seg b { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.5rem; }
 .timeline__seg span { color: var(--muted); font-size: .9rem; }
+.section--dark .timeline__seg span { color: rgba(247, 242, 234, .78); } /* the timeline sits on the dark band */
 
 /* ---------- accordion (faq) ---------- */
 .faq-list details { border-bottom: 1px solid var(--line); padding: 1.3rem 0; }

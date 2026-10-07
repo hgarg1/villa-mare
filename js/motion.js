@@ -23,6 +23,7 @@
 
   const { gsap, ScrollTrigger } = window;
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true }); // URL-bar show/hide must not re-measure every trigger
 
   /* ---------- Smooth scroll ---------- */
   if (window.Lenis) {

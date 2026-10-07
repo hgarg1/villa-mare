@@ -1,0 +1,13 @@
+{
+  "name": "villa-mare-tools",
+  "private": true,
+  "description": "Dev-only tooling (never deployed). The site itself is plain HTML/CSS/JS.",
+  "scripts": {
+    "mobile": "node mobile-check/run.mjs",
+    "mobile:quick": "node mobile-check/run.mjs --quick"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "playwright": "^1.50.0"
+  }
+}
