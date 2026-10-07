@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Journal — Villa Maré</title>
+  <meta name="description" content="Stories from the villa: food, sea, design and slow-travel guides." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <main id="main">
+    <section class="hero page-hero" data-section="Top">
+      <div class="hero__media"><img src="assets/img/rainy-day-veranda.jpg" alt="Covered veranda on a rainy afternoon" fetchpriority="high" /></div>
+      <div class="hero__content wrap"><span class="eyebrow">Journal</span><h1 data-split>Notes from the shore</h1></div>
+    </section>
+
+    <section class="section" data-section="Featured">
+      <div class="wrap"><div class="journal-feature" id="feature"></div></div>
+    </section>
+
+    <section class="section section--sand" data-section="All stories">
+      <div class="wrap">
+        <div class="journal-tools">
+          <div class="filters" role="group" aria-label="Filter stories" id="post-filters"></div>
+          <div class="search"><label class="sr-only" for="post-search">Search stories</label><input id="post-search" type="search" placeholder="Search stories" autocomplete="off" />
+            <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor"/><path d="m11 11 4 4" stroke="currentColor"/></svg></div>
+        </div>
+        <div class="post-grid" id="post-grid"></div>
+        <p class="no-results" id="no-results" hidden>No stories match your search.</p>
+      </div>
+    </section>
+
+    <section class="section section--dark" data-section="Newsletter" data-theme="dark">
+      <div class="wrap news-band">
+        <div class="stack"><span class="eyebrow" data-reveal>The letter</span><h2 data-split>One note a season</h2><p class="lead" data-reveal>Recipes, sea conditions and the odd late-night thought.</p></div>
+        <form id="journal-news" novalidate data-reveal>
+          <label class="sr-only" for="jn-email">Email address</label>
+          <input id="jn-email" type="email" placeholder="Your email" autocomplete="email" data-format="email" />
+          <button class="btn btn--light" type="submit">Subscribe</button>
+          <span class="err" role="alert"></span>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/format.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/availability.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/journal.js"></script>
+  <script src="js/motion.js"></script>
+</body>
+</html>

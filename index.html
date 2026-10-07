@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Villa Maré — Private Beachfront Villa</title>
+  <meta name="description" content="A private beachfront villa for slow mornings, long dinners and nothing on the calendar." />
+  <meta property="og:title" content="Villa Maré — Private Beachfront Villa" />
+  <meta property="og:description" content="Four suites, one private beach and a house team who vanish when you want them to." />
+  <meta property="og:image" content="assets/img/hero-dusk.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VacationRental","name":"Villa Maré","description":"A private beachfront villa with four suites, a private beach and a house team.","image":"assets/img/hero-dusk.jpg","numberOfRooms":4,"occupancy":{"@type":"QuantitativeValue","maxValue":8}}</script>
+</head>
+<body>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero hero--with-bar" data-section="Top">
+      <div class="hero__media"><img src="assets/img/hero-dusk.jpg" alt="Villa Maré at golden hour with its infinity pool facing the sea" fetchpriority="high" /></div>
+      <div class="hero__content wrap">
+        <span class="eyebrow">Private beachfront villa · Maré Bay</span>
+        <div class="hero__row">
+          <h1 class="display" data-split>Where the land<br />gives way to <em>sea</em></h1>
+          <div class="stack">
+            <p class="hero__sub">Four suites, one private beach and a staff who vanish when you want them to.</p>
+            <a class="btn btn--light" href="rates.html">Rates &amp; availability</a>
+          </div>
+        </div>
+      </div>
+      <span class="scroll-cue">Scroll</span>
+    </section>
+
+    <!-- Quick booking bar (overlaps the hero) -->
+    <section class="booking-wrap" data-section="Check dates" aria-label="Check availability">
+      <div class="wrap">
+        <form class="booking-bar" id="quick" novalidate data-daterange data-rules="availability">
+          <div class="field">
+            <label for="arrive-btn">Arrival</label>
+            <button type="button" class="picker-trigger" id="arrive-btn" data-dr-btn="arrive" aria-haspopup="dialog" aria-expanded="false"><span class="picker-value is-placeholder">Select date</span>
+              <svg class="picker-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1.5" fill="none" stroke="currentColor"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" fill="none" stroke="currentColor"/></svg></button>
+            <input type="hidden" name="arrive" /><span class="err" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="depart-btn">Departure</label>
+            <button type="button" class="picker-trigger" id="depart-btn" data-dr-btn="depart" aria-haspopup="dialog" aria-expanded="false"><span class="picker-value is-placeholder">Select date</span>
+              <svg class="picker-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1.5" fill="none" stroke="currentColor"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" fill="none" stroke="currentColor"/></svg></button>
+            <input type="hidden" name="depart" /><span class="err" role="alert"></span>
+          </div>
+          <div class="field select" data-select>
+            <label id="guests-l" for="guests-btn">Guests</label>
+            <button type="button" class="picker-trigger" id="guests-btn" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="guests-l guests-btn"><span class="picker-value"></span>
+              <svg class="picker-icon" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="m2 4 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+            <ul class="select__list" role="listbox" aria-labelledby="guests-l">
+              <li role="option" data-value="1">1 guest</li><li role="option" data-value="2">2 guests</li><li role="option" data-value="3">3 guests</li><li role="option" data-value="4">4 guests</li>
+              <li role="option" data-value="5">5 guests</li><li role="option" data-value="6">6 guests</li><li role="option" data-value="7">7 guests</li><li role="option" data-value="8">8 guests</li>
+            </ul>
+            <input type="hidden" name="guests" value="2" />
+          </div>
+          <button class="btn btn--solid" type="submit">Check availability</button>
+          <p class="booking-bar__err" id="quick-err" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="section" data-section="The house">
+      <div class="wrap grid-2">
+        <div class="stack">
+          <span class="eyebrow" data-reveal>The house</span>
+          <h2 data-split>Built to disappear into the shoreline</h2>
+          <p class="lead" data-reveal>Villa Maré sits at the very edge of the sand. Whitewashed walls, travertine floors and teak louvres frame the water from every room, so the sea is less a view than a presence.</p>
+          <p class="lead" data-reveal>Sleeps eight. Staffed daily. Entirely yours.</p>
+          <a class="link-arrow" data-reveal href="villa.html">Explore the villa <span>→</span></a>
+        </div>
+        <div class="img-mask ratio-45" data-mask data-parallax>
+          <img src="assets/img/villa-exterior.jpg" alt="The villa's whitewashed facade seen from the beach" loading="lazy" />
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="stats" data-stagger>
+          <div class="stat"><b data-count="4">4</b><span>Suites</span></div>
+          <div class="stat"><b data-count="8">8</b><span>Guests</span></div>
+          <div class="stat"><b data-count="0">0</b><span>Metres to the sea</span></div>
+          <div class="stat"><b data-count="12">12</b><span>Staff on hand</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" data-marquee>
+        <span>Private beach</span><span>Infinity pool</span><span>Chef's table</span><span>Sunrise yoga</span><span>Sailing</span><span>Slow mornings</span>
+      </div>
+    </div>
+
+    <!-- Suites -->
+    <section class="section" data-section="Suites">
+      <div class="wrap">
+        <div class="grid-2" style="align-items:end;margin-bottom:3.5rem">
+          <div class="stack"><span class="eyebrow" data-reveal>The suites</span><h2 data-split>Four rooms, all facing the light</h2></div>
+          <p class="lead" data-reveal>Every suite has its own terrace and outdoor shower. The villa is let as a whole, so they are all yours.</p>
+        </div>
+        <div class="suite-strip" id="home-suites"></div>
+        <p style="margin-top:2.4rem" data-reveal><a class="link-arrow" href="suites.html">All suites <span>→</span></a></p>
+      </div>
+    </section>
+
+    <!-- Experiences teaser -->
+    <section class="section section--sand" data-section="Days at Maré">
+      <div class="wrap">
+        <div class="center stack" style="margin-bottom:5rem">
+          <span class="eyebrow" data-reveal>Days at Maré</span>
+          <h2 data-split>An unhurried itinerary</h2>
+        </div>
+        <div class="cards">
+          <a class="card" href="experiences.html" data-reveal>
+            <div class="img-mask ratio-45"><img src="assets/img/dawn-yoga.jpg" alt="Yoga deck at sunrise" loading="lazy" /></div>
+            <h3>Dawn on the deck</h3><p>Private yoga and breathwork as the light comes up over the water.</p>
+          </a>
+          <a class="card" href="experiences.html" data-reveal style="margin-top:4rem">
+            <div class="img-mask ratio-45"><img src="assets/img/sunset-dinner.jpg" alt="Candlelit dinner on the sand" loading="lazy" /></div>
+            <h3>Dinner on the sand</h3><p>Your chef builds a table at the tideline. Candles, linen, nothing else.</p>
+          </a>
+          <a class="card" href="experiences.html" data-reveal>
+            <div class="img-mask ratio-45"><img src="assets/img/sailing.jpg" alt="Wooden sailboat on calm water" loading="lazy" /></div>
+            <h3>A day under sail</h3><p>A restored wooden sloop, a picnic hamper and a quiet cove to yourselves.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offers -->
+    <section class="section" data-section="Offers">
+      <div class="wrap">
+        <div class="grid-2" style="align-items:end;margin-bottom:3rem">
+          <div class="stack"><span class="eyebrow" data-reveal>Offers</span><h2 data-split>Good reasons to book now</h2></div>
+          <p class="lead" data-reveal>Copy a code and apply it at checkout. One offer per stay.</p>
+        </div>
+        <div class="offers" id="offers" data-stagger></div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section section--dark" data-section="Guest notes" data-theme="dark">
+      <div class="wrap">
+        <div class="stack center" style="margin-bottom:3rem"><span class="eyebrow" data-reveal>Guest notes</span><h2 data-split>In their words</h2></div>
+        <div class="carousel" id="reviews" role="region" aria-roledescription="carousel" aria-label="Guest reviews">
+          <div class="carousel__track" id="reviews-track" tabindex="0"></div>
+          <div class="carousel__ctrl">
+            <button type="button" class="carousel__btn" data-dir="-1" aria-label="Previous review">←</button>
+            <div class="carousel__dots" id="reviews-dots" role="tablist" aria-label="Choose review"></div>
+            <button type="button" class="carousel__btn" data-dir="1" aria-label="Next review">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Area -->
+    <section class="section" data-section="The area">
+      <div class="wrap grid-2" style="align-items:start">
+        <div class="stack">
+          <span class="eyebrow" data-reveal>Where we are</span>
+          <h2 data-split>Quiet, but never remote</h2>
+          <p class="lead" data-reveal>Forty-five minutes from the airport by road, and a few minutes from a working harbour, a morning market and the best grilled fish on the coast.</p>
+          <ul class="places" id="places" data-stagger></ul>
+        </div>
+        <figure class="map" data-reveal>
+          <svg viewBox="0 0 600 440" role="img" aria-label="Stylised map of Maré Bay showing the villa, harbour, reef, cove and road to the airport">
+            <rect width="600" height="440" fill="#d9ebe7"/>
+            <path d="M0 0H600V120C540 150 520 210 470 240C420 270 380 250 330 290C280 330 300 390 240 440H0Z" fill="#efe6d3"/>
+            <path d="M0 120C60 150 120 140 170 190C220 240 200 330 140 440" fill="none" stroke="#fff" stroke-width="3" opacity=".65"/>
+            <path d="M50 30C150 70 230 60 300 120S470 200 560 170" fill="none" stroke="#b08d57" stroke-width="2" stroke-dasharray="6 6"/>
+            <g class="mk" data-id="villa"><circle cx="300" cy="120" r="9" class="pin"/><circle cx="300" cy="120" r="20" class="pulse"/><text x="300" y="98" text-anchor="middle" class="mk-t">Villa Maré</text></g>
+            <g class="mk" data-id="harbour"><circle cx="395" cy="190" r="6"/><text x="408" y="188" class="mk-t">Harbour &amp; market</text></g>
+            <g class="mk" data-id="reef"><circle cx="190" cy="210" r="6"/><text x="120" y="228" class="mk-t">Reef</text></g>
+            <g class="mk" data-id="cove"><circle cx="150" cy="290" r="6"/><text x="162" y="294" class="mk-t">Morning cove</text></g>
+            <g class="mk" data-id="village"><circle cx="500" cy="150" r="6"/><text x="500" y="134" text-anchor="middle" class="mk-t">Village</text></g>
+            <g class="mk" data-id="airport"><circle cx="50" cy="30" r="6"/><text x="64" y="34" class="mk-t">Airport</text></g>
+            <text x="440" y="400" class="mk-t sea-t">Maré Bay</text>
+          </svg>
+          <figcaption>Illustrative map — not to scale.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Journal -->
+    <section class="section section--sand" data-section="Journal">
+      <div class="wrap">
+        <div class="grid-2" style="align-items:end;margin-bottom:3rem">
+          <div class="stack"><span class="eyebrow" data-reveal>Journal</span><h2 data-split>Notes from the shore</h2></div>
+          <p class="lead" data-reveal>Recipes, sea conditions and the thinking behind the house.</p>
+        </div>
+        <div class="post-grid" id="home-posts"></div>
+        <p style="margin-top:2.4rem" data-reveal><a class="link-arrow" href="journal.html">All stories <span>→</span></a></p>
+      </div>
+    </section>
+
+    <!-- Image strip -->
+    <section class="strip-section" data-section="Moments" aria-label="Moments at the villa">
+      <div class="strip" data-stagger>
+        <img src="assets/img/terrace-pool.jpg" alt="Terrace and pool" loading="lazy" /><img src="assets/img/outdoor-shower.jpg" alt="Stone outdoor shower" loading="lazy" />
+        <img src="assets/img/beach-path.jpg" alt="Boardwalk to the beach" loading="lazy" /><img src="assets/img/spa-ritual.jpg" alt="Spa ritual detail" loading="lazy" />
+        <img src="assets/img/kitchen-dining.jpg" alt="Kitchen and dining table" loading="lazy" /><img src="assets/img/night-sky-terrace.jpg" alt="Terrace under the night sky" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" data-section="Questions">
+      <div class="wrap grid-2" style="align-items:start">
+        <div class="stack"><span class="eyebrow" data-reveal>Good to know</span><h2 data-split>Common questions</h2>
+          <p class="lead" data-reveal>Can't find your answer? Our concierge replies within a few hours.</p>
+          <a class="link-arrow" href="contact.html" data-reveal>Ask the concierge <span>→</span></a></div>
+        <div class="faq-list" id="home-faq" data-stagger></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta" data-section="Reserve">
+      <div class="cta__bg"><img src="assets/img/aerial-coast.jpg" alt="" loading="lazy" /></div>
+      <div class="wrap">
+        <span class="eyebrow" data-reveal>Reserve your stay</span>
+        <h2 data-split>Your stretch of shore is waiting</h2>
+        <a class="btn btn--light" href="rates.html#check" data-reveal>Check availability</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/format.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/availability.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/home.js"></script>
+  <script src="js/motion.js"></script>
+</body>
+</html>

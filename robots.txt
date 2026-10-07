@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /checkout.html
+Disallow: /booking.html
+Disallow: /tests.html
+Sitemap: https://villa.harshit-garg.com/sitemap.xml

@@ -1,0 +1,49 @@
+{
+  "style": "Editorial luxury travel photography, natural golden-hour light, warm ivory / sand / driftwood palette with soft sea-glass teal accents, a tropical beachfront modern private villa with whitewashed walls, travertine stone, teak wood and natural linen, shallow depth of field, shot on 35mm film, subtle grain, photorealistic, no text, no watermark, no visible faces.",
+  "images": [
+    { "name": "hero-dusk",       "aspect": "16:9", "prompt": "Wide shot of the villa facade seen from the sand at golden hour, a long infinity pool in front reflecting the peach sky, calm turquoise sea beyond, a few palms." },
+    { "name": "villa-exterior",  "aspect": "3:2",  "prompt": "The villa seen from the beach, low horizontal whitewashed architecture with teak louvres and deep shaded verandas, palms and dune grass in the foreground." },
+    { "name": "living-room",     "aspect": "3:2",  "prompt": "Open-plan living room with oversized linen sofas, travertine coffee table, floor-to-ceiling glass doors fully open to a sea view, soft sheer curtains moving in the breeze." },
+    { "name": "master-bedroom",  "aspect": "3:2",  "prompt": "Master bedroom with a low linen bed and sheer canopy, ocean-facing glass wall, soft morning light, woven rug and a single ceramic vase." },
+    { "name": "second-bedroom",  "aspect": "3:2",  "prompt": "Guest suite with twin beds, rattan headboards and soft cream textiles, shuttered window with a glimpse of palms and sea." },
+    { "name": "terrace-pool",    "aspect": "16:9", "prompt": "Large terrace with teak loungers and white parasols beside a pool whose edge meets the beach, late afternoon light." },
+    { "name": "kitchen-dining",  "aspect": "3:2",  "prompt": "Chef's kitchen with a stone island and a long teak dining table set for dinner, open to a shaded terrace, warm light." },
+    { "name": "outdoor-shower",  "aspect": "4:5",  "prompt": "Private stone outdoor shower enclosed by lush tropical greenery and a pebble floor, brass fixture, dappled sunlight." },
+    { "name": "beach-path",      "aspect": "4:5",  "prompt": "A weathered timber boardwalk winding through dune grass toward a turquoise sea, soft morning light." },
+    { "name": "aerial-coast",    "aspect": "16:9", "prompt": "Aerial view of a single white villa on a curved white-sand beach with turquoise shallows and a gradient into deep blue water." },
+    { "name": "dawn-yoga",       "aspect": "4:5",  "prompt": "A wooden yoga deck over the sand at sunrise, two rolled mats and a silhouette figure in warrior pose, no faces, pastel sky." },
+    { "name": "sunset-dinner",   "aspect": "3:2",  "prompt": "A candlelit dinner table set directly on the sand at sunset, linen runners, lanterns, glassware, glowing horizon." },
+    { "name": "sailing",         "aspect": "3:2",  "prompt": "A classic wooden sailboat with cream sails on a calm turquoise sea near the shore, bright late-morning light." },
+    { "name": "spa-ritual",      "aspect": "4:5",  "prompt": "Close detail of a spa treatment setting: folded linen towels, amber oil bottles, shells and a frangipani flower on a stone slab." },
+    { "name": "details-texture", "aspect": "1:1",  "prompt": "Still life of linen fabric, a conch shell and a brass key on a driftwood surface, soft side light." },
+    { "name": "contact-bg",      "aspect": "16:9", "prompt": "A quiet empty horizon at dusk over a calm sea, soft gradient sky from peach to dusty blue, a thin line of surf." },
+
+    { "group": "suites", "name": "master-bath",       "aspect": "3:2",  "prompt": "Master suite bathroom with a freestanding stone bathtub beside a large window facing the sea, travertine walls, brass fixtures, folded linen towels, soft morning light." },
+    { "group": "suites", "name": "master-terrace",    "aspect": "3:2",  "prompt": "Private terrace of the master suite with a teak daybed, white linen cushions and a view straight onto the beach, morning light." },
+    { "group": "suites", "name": "garden1-bedroom",   "aspect": "3:2",  "prompt": "Garden suite bedroom with a king bed in natural linen, whitewashed walls, rattan pendant lamp, tall doors opening to tropical greenery." },
+    { "group": "suites", "name": "garden1-terrace",   "aspect": "3:2",  "prompt": "Shaded garden terrace outside a bedroom, two teak armchairs, a small stone table, frangipani tree, dappled light, glimpse of the sea." },
+    { "group": "suites", "name": "garden2-bedroom",   "aspect": "3:2",  "prompt": "Garden suite bedroom with two single beds pushed together under a sheer canopy, soft earthy palette, woven headboard, plants by the window." },
+    { "group": "suites", "name": "sunrise-bedroom",   "aspect": "3:2",  "prompt": "East-facing corner bedroom filled with warm sunrise light, low linen bed, floor-to-ceiling windows overlooking the ocean, minimal furniture." },
+    { "group": "suites", "name": "sunrise-balcony",   "aspect": "3:2",  "prompt": "Upper balcony with a pair of rattan chairs and coffee set facing the sunrise over the sea, whitewashed rail, soft pastel sky." },
+    { "group": "suites", "name": "suite-bath-detail", "aspect": "4:5",  "prompt": "Detail of a stone washbasin with brass tap, a ceramic soap dish, a sprig of eucalyptus and a linen hand towel, soft side light." },
+
+    { "group": "team", "name": "chef-hands",             "aspect": "3:2", "prompt": "A chef's hands plating grilled fish with herbs on a handmade ceramic plate in an open kitchen, shallow depth of field, no face visible." },
+    { "group": "team", "name": "captain-helm",           "aspect": "3:2", "prompt": "A sailing captain seen from behind at the wooden helm of a classic sloop, hand on the wheel, bright sea ahead, no face visible." },
+    { "group": "team", "name": "concierge-lantern-desk", "aspect": "3:2", "prompt": "A teak concierge desk on a shaded veranda with a brass bell, handwritten notes, a leather-bound guest book and a lantern, warm light, no people." },
+    { "group": "team", "name": "therapist-oils",         "aspect": "3:2", "prompt": "A spa therapist's hands warming oil above a treatment bed in a garden pavilion, linen drapes, no face visible." },
+    { "group": "team", "name": "housekeeper-linen",      "aspect": "3:2", "prompt": "Stack of freshly pressed white linen with a sprig of jasmine on a bed in a sunlit room, hands smoothing the sheet, no face visible." },
+
+    { "group": "journal", "name": "architecture-stone-detail", "aspect": "3:2", "prompt": "Close detail of hand-cut travertine wall meeting weathered teak louvres, raking sunlight creating long shadows, architectural photography." },
+    { "group": "journal", "name": "market-produce",            "aspect": "3:2", "prompt": "A tropical morning market stall with baskets of mangoes, papayas, limes and fresh fish on ice, linen awning, soft daylight." },
+    { "group": "journal", "name": "packing-flatlay",           "aspect": "3:2", "prompt": "Overhead flat lay for a beach trip: straw hat, linen shirt, sunglasses, leather sandals, paperback book and a canvas tote on a sand-coloured surface." },
+    { "group": "journal", "name": "night-sky-terrace",         "aspect": "3:2", "prompt": "Villa terrace at night with a milky-way sky over the sea, glowing lanterns and an empty pair of loungers, long exposure." },
+    { "group": "journal", "name": "rainy-day-veranda",         "aspect": "3:2", "prompt": "A covered veranda on a rainy tropical afternoon, rain curtain beyond, a pot of tea, a blanket on a daybed and moody green sea light." },
+
+    { "group": "misc", "name": "rates-hero",              "aspect": "16:9", "prompt": "A calm turquoise lagoon seen from above with gentle light patterns on the sand beneath, soft and abstract, no buildings." },
+    { "group": "misc", "name": "confirmation-keys-shells","aspect": "16:9", "prompt": "A brass key with a wooden tag, a welcome card and a few seashells on a linen-covered table beside an open window with sea light." },
+    { "group": "misc", "name": "airport-transfer-car",    "aspect": "3:2",  "prompt": "A vintage cream-coloured open-top car parked on a palm-lined coastal road at golden hour, empty, no people." },
+    { "group": "misc", "name": "kids-beach-club",         "aspect": "3:2",  "prompt": "Colourful but tasteful children's beach setup: canvas tent, wooden toys, buckets and shells on soft sand, no children visible, golden light." },
+    { "group": "misc", "name": "404-lost-horizon",        "aspect": "16:9", "prompt": "A single footpath of footprints leading along an empty beach into soft sea mist at dawn, minimal and quiet." },
+    { "group": "misc", "name": "policies-linen-texture",  "aspect": "16:9", "prompt": "Soft folded ivory linen texture with subtle wrinkles in natural window light, abstract, calm, editorial." }
+  ]
+}

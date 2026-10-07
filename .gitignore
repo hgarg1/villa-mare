@@ -1,0 +1,11 @@
+# source PNGs from Codex (~90 MB): regenerate with scripts/generate-images.ps1
+assets/originals/
+
+# local generation logs (contain machine paths)
+scripts/logs/
+scripts/generate.log
+*.log
+
+node_modules/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery — Villa Maré</title>
+  <meta name="description" content="A look inside Villa Maré, its beach and the days spent there." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="hero__media"><img src="assets/img/aerial-coast.jpg" alt="Aerial view of the villa and its beach" fetchpriority="high" /></div>
+      <div class="hero__content wrap">
+        <span class="eyebrow">Gallery</span>
+        <h1 data-split>Light, sand &amp; stone</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="filters" role="group" aria-label="Filter images">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="villa" aria-pressed="false">The villa</button>
+          <button type="button" data-filter="beach" aria-pressed="false">Beach &amp; sea</button>
+          <button type="button" data-filter="days" aria-pressed="false">Days at Maré</button>
+        </div>
+
+        <div class="masonry">
+          <figure class="ratio-169" data-cat="beach"><img src="assets/img/aerial-coast.jpg" alt="Aerial view of the coastline" loading="lazy" /><figcaption>Aerial coast</figcaption></figure>
+          <figure class="ratio-45" data-cat="days"><img src="assets/img/dawn-yoga.jpg" alt="Sunrise yoga deck" loading="lazy" /><figcaption>Sunrise yoga</figcaption></figure>
+          <figure class="ratio-32" data-cat="villa"><img src="assets/img/villa-exterior.jpg" alt="Villa exterior from the beach" loading="lazy" /><figcaption>Villa exterior</figcaption></figure>
+          <figure class="ratio-32" data-cat="villa"><img src="assets/img/living-room.jpg" alt="Living room" loading="lazy" /><figcaption>Living room</figcaption></figure>
+          <figure class="ratio-45" data-cat="beach"><img src="assets/img/beach-path.jpg" alt="Boardwalk through the dunes" loading="lazy" /><figcaption>Beach path</figcaption></figure>
+          <figure class="ratio-32" data-cat="villa"><img src="assets/img/master-bedroom.jpg" alt="Master bedroom" loading="lazy" /><figcaption>Master suite</figcaption></figure>
+          <figure class="ratio-32" data-cat="days"><img src="assets/img/sunset-dinner.jpg" alt="Dinner on the sand" loading="lazy" /><figcaption>Dinner at the tideline</figcaption></figure>
+          <figure class="ratio-169" data-cat="villa"><img src="assets/img/terrace-pool.jpg" alt="Terrace and pool" loading="lazy" /><figcaption>Terrace &amp; pool</figcaption></figure>
+          <figure class="ratio-45" data-cat="villa"><img src="assets/img/outdoor-shower.jpg" alt="Outdoor shower" loading="lazy" /><figcaption>Outdoor shower</figcaption></figure>
+          <figure class="ratio-32" data-cat="days"><img src="assets/img/sailing.jpg" alt="Sailboat at sea" loading="lazy" /><figcaption>Under sail</figcaption></figure>
+          <figure class="ratio-32" data-cat="villa"><img src="assets/img/kitchen-dining.jpg" alt="Kitchen and dining table" loading="lazy" /><figcaption>Kitchen &amp; table</figcaption></figure>
+          <figure class="ratio-45" data-cat="days"><img src="assets/img/spa-ritual.jpg" alt="Spa ritual" loading="lazy" /><figcaption>Spa ritual</figcaption></figure>
+          <figure class="ratio-32" data-cat="villa"><img src="assets/img/second-bedroom.jpg" alt="Garden suite" loading="lazy" /><figcaption>Garden suite</figcaption></figure>
+          <figure class="ratio-11" data-cat="villa"><img src="assets/img/details-texture.jpg" alt="Linen, shell and brass still life" loading="lazy" /><figcaption>Details</figcaption></figure>
+          <figure class="ratio-169" data-cat="beach"><img src="assets/img/contact-bg.jpg" alt="Quiet horizon at dusk" loading="lazy" /><figcaption>Dusk horizon</figcaption></figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/format.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/availability.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

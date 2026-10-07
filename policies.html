@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Policies — Villa Maré</title>
+  <meta name="description" content="Terms, privacy, cancellation policy and house rules for Villa Maré (demo site)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <main id="main">
+    <section class="hero page-hero" data-section="Top">
+      <div class="hero__media"><img src="assets/img/policies-linen-texture.jpg" alt="Folded ivory linen" fetchpriority="high" /></div>
+      <div class="hero__content wrap"><span class="eyebrow">Policies</span><h1 data-split>The small print, kindly</h1></div>
+    </section>
+
+    <section class="section" data-section="Policies">
+      <div class="wrap">
+        <div class="policy-tabs" role="tablist" aria-label="Policies" id="ptabs">
+          <button type="button" role="tab" id="t-terms" aria-controls="p-terms" data-key="terms">Terms</button>
+          <button type="button" role="tab" id="t-privacy" aria-controls="p-privacy" data-key="privacy">Privacy</button>
+          <button type="button" role="tab" id="t-cancellation" aria-controls="p-cancellation" data-key="cancellation">Cancellation</button>
+          <button type="button" role="tab" id="t-houserules" aria-controls="p-houserules" data-key="houserules">House rules</button>
+        </div>
+        <div id="ppanels"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/format.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/availability.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/pages/policies.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/motion.js"></script>
+</body>
+</html>

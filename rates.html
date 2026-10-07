@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rates &amp; Availability — Villa Maré</title>
+  <meta name="description" content="Seasonal rates, a live availability calendar and an instant price estimate for Villa Maré." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <main id="main">
+    <section class="hero page-hero" data-section="Top">
+      <div class="hero__media"><img src="assets/img/rates-hero.jpg" alt="Turquoise lagoon seen from above" fetchpriority="high" /></div>
+      <div class="hero__content wrap">
+        <span class="eyebrow">Rates &amp; availability</span>
+        <h1 data-split>One villa, four seasons</h1>
+      </div>
+    </section>
+
+    <section class="section section--sand" data-section="Seasonal rates">
+      <div class="wrap">
+        <div class="grid-2" style="align-items:end;margin-bottom:3.5rem">
+          <div class="stack"><span class="eyebrow" data-reveal>Nightly rates</span><h2 data-split>Priced by the season</h2></div>
+          <p class="lead" data-reveal>Rates are for the whole villa — up to eight guests across four suites. A 30% deposit confirms your stay; the balance is due 30 days before arrival.</p>
+        </div>
+        <table class="seasons" data-reveal>
+          <thead><tr><th>Season</th><th>Dates</th><th>Per night</th><th>Minimum stay</th></tr></thead>
+          <tbody id="seasons-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" data-section="Check your dates" id="check">
+      <div class="wrap">
+        <div class="stack" style="margin-bottom:3rem"><span class="eyebrow" data-reveal>Availability</span><h2 data-split>Find your dates</h2>
+          <p class="lead" data-reveal>Pick a free night in the calendar or use the planner. Shaded colours show the season; struck-through nights are already booked.</p></div>
+        <div class="rates-layout">
+          <div>
+            <div class="cal-legend" id="cal-legend"></div>
+            <div class="cal" id="cal"></div>
+            <p class="cal__note">Tip: click an arrival night, then a departure date. Bookings you make in the demo checkout appear here immediately.</p>
+          </div>
+
+          <aside class="est" aria-labelledby="est-title">
+            <h3 id="est-title">Price your stay</h3>
+            <p>Instant estimate, taxes and fees included.</p>
+            <form class="form" id="estimator" novalidate data-daterange data-rules="availability">
+              <div class="field">
+                <label for="arrive-btn">Arrival</label>
+                <button type="button" class="picker-trigger" id="arrive-btn" data-dr-btn="arrive" aria-haspopup="dialog" aria-expanded="false">
+                  <span class="picker-value is-placeholder">Select date</span>
+                  <svg class="picker-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1.5" fill="none" stroke="currentColor"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" fill="none" stroke="currentColor"/></svg>
+                </button>
+                <input type="hidden" name="arrive" /><span class="err" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="depart-btn">Departure</label>
+                <button type="button" class="picker-trigger" id="depart-btn" data-dr-btn="depart" aria-haspopup="dialog" aria-expanded="false">
+                  <span class="picker-value is-placeholder">Select date</span>
+                  <svg class="picker-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1.5" fill="none" stroke="currentColor"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" fill="none" stroke="currentColor"/></svg>
+                </button>
+                <input type="hidden" name="depart" /><span class="err" role="alert"></span>
+              </div>
+              <div class="field">
+                <span class="field-label" id="adults-l">Adults</span>
+                <div class="stepper" data-stepper data-group="guests" data-cap="8" data-min="1" data-max="8" role="group" aria-labelledby="adults-l">
+                  <button type="button" class="stepper__btn" data-step="-1" aria-label="Remove one adult">−</button><output class="stepper__val" aria-live="polite"></output><button type="button" class="stepper__btn" data-step="1" aria-label="Add one adult">+</button>
+                  <input type="hidden" name="adults" value="2" />
+                </div>
+              </div>
+              <div class="field">
+                <span class="field-label" id="children-l">Children</span>
+                <div class="stepper" data-stepper data-group="guests" data-cap="8" data-min="0" data-max="6" role="group" aria-labelledby="children-l">
+                  <button type="button" class="stepper__btn" data-step="-1" aria-label="Remove one child">−</button><output class="stepper__val" aria-live="polite"></output><button type="button" class="stepper__btn" data-step="1" aria-label="Add one child">+</button>
+                  <input type="hidden" name="children" value="0" />
+                </div>
+              </div>
+              <div class="field field--full">
+                <div class="est__promo">
+                  <div class="field"><label for="promo">Promo code</label><input id="promo" name="promo" autocomplete="off" placeholder="e.g. WELCOME10" data-format="promo" /></div>
+                  <button type="button" class="est__apply" id="promo-apply">Apply</button>
+                </div>
+                <p class="promo-msg" id="promo-msg" role="status"></p>
+              </div>
+            </form>
+            <div class="est__out" id="est-out" aria-live="polite"></div>
+            <a class="btn btn--solid" id="est-cta" href="checkout.html" aria-disabled="true">Reserve these dates</a>
+            <p class="est__hold">No payment is taken now · demo booking</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-section="What's included">
+      <div class="wrap grid-2" style="align-items:start">
+        <div class="stack"><span class="eyebrow" data-reveal>Included</span><h2 data-split>Everything in the rate</h2>
+          <p class="lead" data-reveal>No surprise add-ons. The rate covers the villa and the house team; anything extra is your choice at checkout.</p></div>
+        <ul class="includes" data-stagger>
+          <li>Whole villa, 4 suites</li><li>Daily housekeeping</li><li>Breakfast provisions</li><li>Pool &amp; beach equipment</li>
+          <li>Fibre Wi-Fi</li><li>Concierge 24/7</li><li>Welcome dinner</li><li>Paddleboards &amp; snorkels</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--dark" data-section="Cancellation" data-theme="dark">
+      <div class="wrap">
+        <div class="stack"><span class="eyebrow" data-reveal>Flexibility</span><h2 data-split>Plans change. We understand.</h2></div>
+        <div class="timeline" id="timeline" data-stagger></div>
+      </div>
+    </section>
+
+    <section class="section" data-section="Payment FAQ">
+      <div class="wrap grid-2" style="align-items:start">
+        <div class="stack"><span class="eyebrow" data-reveal>Good to know</span><h2 data-split>Payment &amp; policy questions</h2></div>
+        <div class="faq-list" id="faq" data-stagger></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/format.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/availability.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/rates.js"></script>
+  <script src="js/motion.js"></script>
+</body>
+</html>

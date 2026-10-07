@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manage booking — Villa Maré</title>
+  <meta name="description" content="Look up a demo booking, add it to your calendar, print the receipt or cancel it." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body data-header="solid" data-nobookbar data-nocurtain class="checkout-page">
+  <main id="main">
+    <div class="wrap checkout" style="max-width:60rem">
+      <div class="checkout__top"><h1 class="checkout__title">Manage booking</h1></div>
+
+      <section id="lookup-section">
+        <p class="lead">Enter your reference and the email you booked with. Demo bookings live only in this browser.</p>
+        <form class="form lookup" id="lookup" novalidate>
+          <div class="field field--full"><label for="ref">Booking reference</label><input id="ref" name="ref" autocomplete="off" placeholder="VM-XXXX-00" data-format="ref" /><span class="err" role="alert"></span></div>
+          <div class="field field--full"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" data-format="email" /><span class="err" role="alert"></span></div>
+          <div class="field--full" id="lookup-error" role="alert"></div>
+          <div class="field--full"><button class="btn btn--solid" type="submit">Find my booking</button></div>
+        </form>
+        <div id="recent" style="margin-top:2.4rem"></div>
+      </section>
+
+      <section id="view" hidden></section>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/format.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/availability.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/booking.js"></script>
+</body>
+</html>

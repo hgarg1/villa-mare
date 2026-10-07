@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enquire — Villa Maré</title>
+  <meta name="description" content="Check availability and enquire about a stay at Villa Maré." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="hero__media"><img src="assets/img/contact-bg.jpg" alt="Quiet horizon at dusk" fetchpriority="high" /></div>
+      <div class="hero__content wrap">
+        <span class="eyebrow">Enquire</span>
+        <h1 data-split>Let's plan your stay</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap contact">
+        <div>
+          <form class="form" id="enquiry" novalidate data-stagger data-daterange>
+            <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" data-format="name" required /><span class="err" role="alert"></span></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" data-format="email" required /><span class="err" role="alert"></span></div>
+            <div class="field">
+              <label for="arrive-btn">Arrival</label>
+              <button type="button" class="picker-trigger" id="arrive-btn" data-dr-btn="arrive" aria-haspopup="dialog" aria-expanded="false">
+                <span class="picker-value is-placeholder">Select date</span>
+                <svg class="picker-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1.5" fill="none" stroke="currentColor"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" fill="none" stroke="currentColor"/></svg>
+              </button>
+              <input type="hidden" name="arrive" /><span class="err" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="depart-btn">Departure</label>
+              <button type="button" class="picker-trigger" id="depart-btn" data-dr-btn="depart" aria-haspopup="dialog" aria-expanded="false">
+                <span class="picker-value is-placeholder">Select date</span>
+                <svg class="picker-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1.5" fill="none" stroke="currentColor"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" fill="none" stroke="currentColor"/></svg>
+              </button>
+              <input type="hidden" name="depart" /><span class="err" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <span class="field-label" id="adults-l">Adults</span>
+              <div class="stepper" data-stepper data-group="guests" data-cap="8" data-min="1" data-max="8" data-noun="" role="group" aria-labelledby="adults-l">
+                <button type="button" class="stepper__btn" data-step="-1" aria-label="Remove one adult">−</button>
+                <output class="stepper__val" aria-live="polite"></output>
+                <button type="button" class="stepper__btn" data-step="1" aria-label="Add one adult">+</button>
+                <input type="hidden" name="adults" value="2" />
+              </div>
+            </div>
+            <div class="field">
+              <span class="field-label" id="children-l">Children</span>
+              <div class="stepper" data-stepper data-group="guests" data-cap="8" data-min="0" data-max="6" role="group" aria-labelledby="children-l">
+                <button type="button" class="stepper__btn" data-step="-1" aria-label="Remove one child">−</button>
+                <output class="stepper__val" aria-live="polite"></output>
+                <button type="button" class="stepper__btn" data-step="1" aria-label="Add one child">+</button>
+                <input type="hidden" name="children" value="0" />
+              </div>
+            </div>
+
+            <div class="field field--full select" data-select>
+              <label id="occasion-l" for="occasion-btn">Occasion</label>
+              <button type="button" class="picker-trigger" id="occasion-btn" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="occasion-l occasion-btn">
+                <span class="picker-value"></span>
+                <svg class="picker-icon" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="m2 4 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+              </button>
+              <ul class="select__list" role="listbox" aria-labelledby="occasion-l">
+                <li role="option" data-value="Holiday">Holiday</li>
+                <li role="option" data-value="Honeymoon">Honeymoon</li>
+                <li role="option" data-value="Family gathering">Family gathering</li>
+                <li role="option" data-value="Wedding or celebration">Wedding or celebration</li>
+                <li role="option" data-value="Wellness retreat">Wellness retreat</li>
+                <li role="option" data-value="Corporate retreat">Corporate retreat</li>
+                <li role="option" data-value="Something else">Something else</li>
+              </ul>
+              <input type="hidden" name="occasion" value="Holiday" />
+            </div>
+
+            <fieldset class="field field--full chips">
+              <legend class="field-label">Add to your stay</legend>
+              <div class="chips__row">
+                <label class="chip"><input type="checkbox" name="extras" value="Private chef" /><span>Private chef</span></label>
+                <label class="chip"><input type="checkbox" name="extras" value="Sunrise yoga" /><span>Sunrise yoga</span></label>
+                <label class="chip"><input type="checkbox" name="extras" value="Sailing day" /><span>Sailing day</span></label>
+                <label class="chip"><input type="checkbox" name="extras" value="Spa ritual" /><span>Spa ritual</span></label>
+                <label class="chip"><input type="checkbox" name="extras" value="Airport transfer" /><span>Airport transfer</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field field--full"><label for="message">Tell us about your trip</label><textarea id="message" name="message"></textarea></div>
+            <div class="field--full"><button class="btn btn--solid" type="submit">Send enquiry</button></div>
+          </form>
+          <div class="form-success" id="enquiry-success" role="status">
+            <h3>Thank you.</h3>
+            <p class="lead" style="margin:1rem auto 2rem">This demo site has no backend. Open the prefilled email to send your enquiry.</p>
+            <a class="btn" id="mailto" href="#">Open email</a>
+          </div>
+        </div>
+
+        <dl class="info" data-reveal>
+          <dt>Email</dt><dd>stay@villamare.example</dd>
+          <dt>Phone</dt><dd>+00 000 000 000</dd>
+          <dt>Location</dt><dd>Maré Bay<br />45 minutes from the airport</dd>
+          <dt>Check-in</dt><dd>From 3 pm · Check-out 11 am</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section--sand">
+      <div class="wrap grid-2" style="align-items:start">
+        <div class="stack"><span class="eyebrow" data-reveal>Good to know</span><h2 data-split>Questions</h2></div>
+        <div class="faq" data-stagger>
+          <details><summary>What is the minimum stay?</summary><p>Five nights in high season, three nights otherwise.</p></details>
+          <details><summary>Is the villa suitable for children?</summary><p>Yes. We provide cots, high chairs and a nanny on request, and the pool has a removable safety fence.</p></details>
+          <details><summary>Can we bring our own chef or staff?</summary><p>Of course. Our team will work alongside yours.</p></details>
+          <details><summary>How do we get there?</summary><p>We arrange private transfers from the airport, including by helicopter.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/format.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/availability.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

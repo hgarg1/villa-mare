@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book your stay — Villa Maré</title>
+  <meta name="description" content="Reserve Villa Maré in five simple steps (demo checkout, no real payment)." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body data-header="solid" data-nobookbar data-nocurtain class="checkout-page">
+  <main id="main">
+    <div class="wrap checkout">
+      <noscript><p class="demo-banner">This booking demo needs JavaScript to run.</p></noscript>
+      <div class="checkout__top">
+        <h1 class="checkout__title">Book your stay</h1>
+        <ol class="steps" id="steps" aria-label="Booking progress"></ol>
+      </div>
+      <div class="hold" id="hold" hidden role="timer" aria-live="off"><span>We're holding these dates for you</span><b id="hold-time">15:00</b></div>
+      <p class="sr-only" id="hold-live" aria-live="polite"></p>
+
+      <div class="checkout__grid">
+        <section class="checkout__main" id="step-root" aria-live="polite"></section>
+        <aside class="summary" id="summary" aria-label="Your booking summary">
+          <button type="button" class="summary__toggle" id="summary-toggle" aria-expanded="false" aria-controls="summary-body">
+            <span>Your total <b id="summary-total-mini">—</b></span><span class="summary__chev" aria-hidden="true">View details</span>
+          </button>
+          <div class="summary__body" id="summary-body"></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/format.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/availability.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
